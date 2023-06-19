@@ -10,7 +10,7 @@ interface ENV {
 }
 
 export const ENVIRONMENT_CONSTANTS: ENV = {
-  DOMAIN: import.meta.env.VITE_BASE_URL,
+  DOMAIN: "https://chefcopastas.netlify.app", // import.meta.env.VITE_BASE_URL,
   ENDPOINT_DATA: "/data.json",
 
   DATA: [],
