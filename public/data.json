@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Sorrentinos de Jamón y Queso",
+      "description": "Masa naranja al huevo con pimiento rojo, relleno de jamón y queso (parmesano, mozzarella, cremoso y ricotta)",
+      "price": 850.00,
+      "portion": 7,
+      "pic_preview": "preview_s_jamon_queso_pimenton_rojo",
+      "pic_cover": "cover_s_jamon_queso_pimenton_rojo"
+    },
+    {
+      "id": 2,
+      "name": "Sorrentinos 4 Quesos",
+      "description": "Masa verde al huevo con espinaca, relleno de cuatro quesos (roquefort, parmesano, mozzarella y ricotta)",
+      "price": 850.00,
+      "portion": 7,
+      "pic_preview": "preview_s_cuatro_quesos_espinaca",
+      "pic_cover": "cover_s_cuatro_quesos_espinaca"
+    },
+    {
+      "id": 3,
+      "name": "Sorrentinos de Ricotta y Espinaca",
+      "description": "Masa amarilla al huevo con cúrcuma, relleno de espinaca, ricotta y parmesano",
+      "price": 850.00,
+      "portion": 7,
+      "pic_preview": "preview_s_ricotta_espinaca_huevo_curcuma",
+      "pic_cover": "cover_s_ricotta_espinaca_huevo_curcuma"
+    },
+    {
+      "id": 4,
+      "name": "Sorrentinos de Calabaza Asada y Queso",
+      "description": "Masa morada huevo con remolacha, relleno de calabaza asada y queso (parmesano, mozzarella y queso crema)",
+      "price": 850.00,
+      "portion": 7,
+      "pic_preview": "preview_s_calabaza_queso_remolacha",
+      "pic_cover": "cover_s_calabaza_queso_remolacha"
+    }
+  ]
+}
