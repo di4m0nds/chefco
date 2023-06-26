@@ -24,7 +24,7 @@ function SearchFilter({ setProducts } : { setProducts: React.Dispatch<React.SetS
         <form className="relative" onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
-            className="bg-secondary md:w-[250px] lg:w-[850px] h-[40px] lg:h-[50px] rounded-[10px] px-5 py-2 shadow-lg"
+            className="bg-secondary input-search md:w-[250px] lg:w-[850px] h-[40px] lg:h-[50px] rounded-[10px] px-5 py-2 shadow-lg"
             placeholder="Buscar"
             onChange={handleSearch}
           />

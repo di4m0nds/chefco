@@ -11,3 +11,26 @@
     background-image: url("/src/assets/bg-header-phone.webp");
   }
 }
+
+@media (max-width: 320px) {
+    .text-title {
+        font-size: 20px;
+    }
+    .text-subtitle {
+        font-size: 12px;
+    }
+    .text-subtitle-content {
+        width: 100px;
+    }
+    .image-product {
+        width: 80px;
+        height: 80px;
+    }
+    .button-shopping {
+        bottom: 4px;
+        right: 8px;
+    }
+    .input-search {
+        width: 180px;
+    }
+}

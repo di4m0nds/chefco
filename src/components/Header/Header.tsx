@@ -14,7 +14,7 @@ function Header() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { delay: 0.6, duration: 1.6, type: "spring" } }}
                 exit={{ opacity: 1, transition: { duration: 0.1 } }}
-                className="text-white text-[30px] lg:text-[42px] font-semibold text-center"
+                className="text-white text-[30px] lg:text-[42px] font-semibold text-center text-title"
               >
                 ¡Descubre el sabor auténtico de la pasta en Chefco Pastas!
               </motion.h1>
