@@ -18,7 +18,7 @@ function DetailsContent({ product }: { product: ProductModel }) {
   return (
     <>
       <div className="relative w-full">
-        <Messages action={action} />
+        <Messages action={action} textUnable={false} />
         <div
           style={{ backgroundImage: `url(${coverPictures[pic_cover]})`}}
           className="w-full flex justify-between z-50 bg-cover lg:bg-center bg-no-repeat bg-left-top bg-fixed h-[400px] md:h-[600px] lg:h-[700px]"
