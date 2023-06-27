@@ -12,7 +12,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 390px) {
     .text-title {
         font-size: 20px;
     }

@@ -30,7 +30,7 @@ function Product({ product }: ProductProps) {
         className="product relative w-full lg:w-[400px] flex mb-5 px-2 py-2 bg-white rounded-[20px] shadow-lg"
       >
         <div className='absolute top-[-40px] w-full justify-center items-center'><Messages action={action} textUnable={true} /></div>
-        <div className="image-product w-[120px] h-[120px] lg:w-[40%] lg:h-[150px] bg-tertiary rounded-[20px] mr-2">
+        <div className="image-product w-[120px] h-[120px] lg:w-[150px] lg:h-[150px] bg-tertiary rounded-[20px] mr-2">
           <Link to={endpointDetails} className="w-full h-full">
             <img src={previewPictures[pic_preview]} alt="producto" className="rounded-[20px] w-full h-full" />
           </Link>

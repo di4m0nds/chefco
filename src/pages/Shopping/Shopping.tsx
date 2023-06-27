@@ -57,7 +57,7 @@ function Shopping() {
           </Link> 
         </div>
 
-        <section>
+        <section className="w-full">
           <h1 className="font-medium text-gray-500 text-2xl mb-5">Tu Carrito</h1>
 
           <p>CANT. PRODUCTOS:</p>
@@ -81,12 +81,12 @@ function Shopping() {
 
           <ShoppingInfoModal />
 
-          <div className="flex flex-wrap lg:justify-evenly lg:mx-4 my-[80px]">
+          <div className="w-full flex flex-wrap lg:justify-center my-[80px]">
             {cart.length > 0 ? (
               cart.map((item, index) => {
                 const repeat = new Array(item.quantity).fill(null)
                 return (
-                  <div key={index}>{repeat.map((_, i) => <Product key={i} product={item.product} />)}</div>
+                  <div className="px-5 w-[28rem]" key={index}>{repeat.map((_, i) => <Product key={i} product={item.product} />)}</div>
                 )
               })
             ) : (
