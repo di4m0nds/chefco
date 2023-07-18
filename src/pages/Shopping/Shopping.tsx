@@ -8,6 +8,16 @@ import ShoppingInfoModal from './ShoppingInfoModal';
 import { CartModel } from '../../utils/exportInterfaces';
 import { ENVIRONMENT_CONSTANTS } from '../../utils/environment';
 import { useEffect } from 'react';
+import { getDiscount, getTotalCountDiscount } from '../../utils/functions';
+
+const discountChecker = (cart: CartModel[], cartCount: number): number => {
+  if (cart.length === 0) return 0
+
+  const totalDiscount = getDiscount(cartCount, ENVIRONMENT_CONSTANTS.PRICE_DISCOUNT, cart[0].product.price)
+  if (totalDiscount === null && cart.length > 0) return cart[0].product.price
+
+  return totalDiscount ?? 0
+}
 
 const sendMesasge = (cart: CartModel[]) => {
   const { WAME_LINK, HEAD_MESSAGE, FOOT_MESSAGE }  = ENVIRONMENT_CONSTANTS
@@ -27,11 +37,16 @@ const sendMesasge = (cart: CartModel[]) => {
 function Shopping() {
     const { cart, clearCart } = useCart()
 
-    let total = 0
-    cart.forEach(item => total += item.product.price * item.quantity)
+    let totalWithoutDiscount = 0
+    cart.forEach(item => totalWithoutDiscount += item.product.price * item.quantity)
 
+    let total = 0
     let cartCount = 0
+    let totalCountDiscount = 0
+
     cart.forEach(item => cartCount += item.quantity)
+    totalCountDiscount = getTotalCountDiscount(cartCount)
+    total = discountChecker(cart, cartCount)
 
     const openMessage = () => sendMesasge(cart)
 
@@ -61,10 +76,15 @@ function Shopping() {
           <h1 className="font-medium text-gray-500 text-2xl mb-5">Tu Carrito</h1>
 
           <p>CANT. PRODUCTOS:</p>
-          <p className="font-semibold mb-2">{cartCount}</p>
+          <p className="font-semibold mb-2">{cartCount.toString()}</p>
 
           <p>MONTO TOTAL</p>
-          <p className="font-semibold mb-2">${total.toString()}</p>
+          <div className="mb-2 flex items-end">
+            <p className="font-semibold text-[22px]">${total.toString()}</p>
+            {totalWithoutDiscount > 0 && totalCountDiscount > 0 &&
+              <p className="font-semibold line-through ml-3 text-gray-500 text-[18px]">${totalWithoutDiscount.toString()}</p>
+            }
+          </div>
 
           <div className="w-full h-2 rounded-[50px] bg-gray-300 my-5" />
 
