@@ -2,39 +2,53 @@
   "data": [
     {
       "id": 1,
+      "tag": "sorrentinos",
       "name": "Sorrentinos de Jamón y Queso",
       "description": "Masa naranja al huevo con pimiento rojo, relleno de jamón y queso (parmesano, mozzarella, cremoso y ricotta)",
-      "price": 930.00,
+      "price": 1050.00,
       "portion": 7,
       "pic_preview": "preview_s_jamon_queso_pimenton_rojo",
       "pic_cover": "cover_s_jamon_queso_pimenton_rojo"
     },
     {
       "id": 2,
+      "tag": "sorrentinos",
       "name": "Sorrentinos 4 Quesos",
       "description": "Masa verde al huevo con espinaca, relleno de cuatro quesos (roquefort, parmesano, mozzarella y ricotta)",
-      "price": 930.00,
+      "price": 1050.00,
       "portion": 7,
       "pic_preview": "preview_s_cuatro_quesos_espinaca",
       "pic_cover": "cover_s_cuatro_quesos_espinaca"
     },
     {
       "id": 3,
+      "tag": "sorrentinos",
       "name": "Sorrentinos de Ricotta y Espinaca",
       "description": "Masa amarilla al huevo con cúrcuma, relleno de espinaca, ricotta y parmesano",
-      "price": 930.00,
+      "price": 1050.00,
       "portion": 7,
       "pic_preview": "preview_s_ricotta_espinaca_huevo_curcuma",
       "pic_cover": "cover_s_ricotta_espinaca_huevo_curcuma"
     },
     {
       "id": 4,
+      "tag": "sorrentinos",
       "name": "Sorrentinos de Calabaza Asada y Queso",
-      "description": "Masa morada huevo con remolacha, relleno de calabaza asada y queso (parmesano, mozzarella y queso crema)",
-      "price": 930.00,
+      "description": "Masa morada al huevo con remolacha, relleno de calabaza asada y queso (parmesano, mozzarella y queso crema)",
+      "price": 1050.00,
       "portion": 7,
       "pic_preview": "preview_s_calabaza_queso_remolacha",
       "pic_cover": "cover_s_calabaza_queso_remolacha"
+    },
+    {
+      "id": 6,
+      "tag": "lasagnas",
+      "name": "Lasagna CHEFCO",
+      "description": "Bolognesa (salsa ragú con carne), béchamel (salsa blanca tradicional), mozzarella y sardo.",
+      "price": 2200.00,
+      "portion": 1,
+      "pic_preview": "preview_lasagna",
+      "pic_cover": "cover_lasagna"
     }
   ]
 }

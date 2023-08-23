@@ -32,10 +32,10 @@ function Product({ product }: ProductProps) {
         <div className='absolute top-[-40px] w-full justify-center items-center'><Messages action={action} textUnable={true} /></div>
         <div className="image-product w-[120px] h-[120px] lg:w-[150px] lg:h-[150px] bg-tertiary rounded-[20px] mr-2">
           <Link to={endpointDetails} className="w-full h-full">
-            <img src={previewPictures[pic_preview]} alt="producto" className="rounded-[20px] w-full h-full" />
+            <img src={previewPictures[pic_preview]} alt="producto" className="rounded-[20px] w-full h-full object-cover object-center" />
           </Link>
         </div>
-        <div className="w-[50%] lg:w-[60%] text-subtitle-content">
+        <div className="w-[60%] lg:w-[60%] flex flex-col justify-between">
           <p className="mt-2 mb-2 font-medium text-subtitle">{name}</p>
           <p className="font-semibold text-subtitle">${price.toString()} /x{portion.toString()}</p>
         </div>

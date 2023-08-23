@@ -12,6 +12,9 @@ import cover_s_CuatroQuesosEspinaca from "./product/cover_s_cuatro_quesos_espina
 import cover_s_CalabazaQuesoRemolacha from "./product/cover_s_calabaza_queso_remolacha.jpg"
 import cover_s_JamonQuesoPimentonRojo from "./product/cover_s_jamon_queso_pimenton_rojo.jpg"
 
+import preview_lasagna from "./product/preview_lasagna.jpg"
+import cover_lasagna from "./product/cover_lasagna.jpg"
+
 export {
   fullLogo,
   fullLogoPNG,
@@ -26,4 +29,7 @@ export {
   cover_s_CuatroQuesosEspinaca,
   cover_s_CalabazaQuesoRemolacha,
   cover_s_JamonQuesoPimentonRojo,
+
+  preview_lasagna,
+  cover_lasagna,
 }

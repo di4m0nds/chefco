@@ -2,6 +2,7 @@ import React from "react";
 
 export interface ProductModel {
   id: number;
+  tag: string;
   name: string;
   description: string;
   price: number;

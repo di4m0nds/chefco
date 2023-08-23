@@ -10,16 +10,27 @@ import { ENVIRONMENT_CONSTANTS } from '../../utils/environment';
 import { useEffect } from 'react';
 import { getDiscount, getTotalCountDiscount } from '../../utils/functions';
 
-const discountChecker = (cart: CartModel[], cartCount: number): number => {
+const discounter = (cart: CartModel[], price_discount: number, individual_price: number, tag: string): number => {
   if (cart.length === 0) return 0
 
-  const totalDiscount = getDiscount(cartCount, ENVIRONMENT_CONSTANTS.PRICE_DISCOUNT, cart[0].product.price)
-  if (totalDiscount === null && cart.length > 0) return cart[0].product.price
+  const cartTagged = cart.filter(item => item.product.tag === tag)
+  if (cartTagged === null || cartTagged.length <= 0) return 0
+  let cartQuantity = 0
+  cartTagged.forEach((item) => {
+    cartQuantity += item.quantity
+  })
+
+  if (!cartQuantity || cartQuantity === 0) return 0
+  // if (cartTagged.length === 1) return individual_price
+
+  // const totalDiscount = getDiscount(cartCount, price_discount, individual_price)
+  const totalDiscount = getDiscount(cartQuantity, price_discount, individual_price)
+  if (totalDiscount === null && cart.length > 0) return individual_price
 
   return totalDiscount ?? 0
 }
 
-const sendMesasge = (cart: CartModel[]) => {
+const sendMesasge = (cart: CartModel[], total:number, totalWithoutDiscount:number) => {
   const { WAME_LINK, HEAD_MESSAGE, FOOT_MESSAGE }  = ENVIRONMENT_CONSTANTS
   let products = "\n"
 
@@ -28,6 +39,15 @@ const sendMesasge = (cart: CartModel[]) => {
       products += `- *${item.product.name}* ${item.quantity > 1 ? "(Cantidad: "+item.quantity+")" : '' }\n`
     }
   })
+
+  let discountMessage = '';
+  if (totalWithoutDiscount !== total) {
+    const discountPercentage = 100 - ((totalWithoutDiscount * 100) / total);
+    const formattedDiscount = Math.floor(discountPercentage);
+    discountMessage = ` (Descuento del ${formattedDiscount}%)`;
+  }
+
+  products += `\n*TOTAL:* $${total}${discountMessage}\n`;
 
   const url = `${WAME_LINK}${HEAD_MESSAGE}${encodeURIComponent(products+"\n")}${FOOT_MESSAGE}`
 
@@ -41,14 +61,32 @@ function Shopping() {
     cart.forEach(item => totalWithoutDiscount += item.product.price * item.quantity)
 
     let total = 0
+    let totalSorrentinos = 0
+    let totalLasagna = 0
     let cartCount = 0
     let totalCountDiscount = 0
 
     cart.forEach(item => cartCount += item.quantity)
     totalCountDiscount = getTotalCountDiscount(cartCount)
-    total = discountChecker(cart, cartCount)
 
-    const openMessage = () => sendMesasge(cart)
+    // SORRENTINOS Only
+    totalSorrentinos = discounter(
+      cart,
+      ENVIRONMENT_CONSTANTS.PRICE_DISCOUNT_SORRENTINOS,
+      ENVIRONMENT_CONSTANTS.PRICE_SORRENTINOS,
+      ENVIRONMENT_CONSTANTS.TAG_SORRENTINOS,
+    )
+    // LASAGNA Only
+    totalLasagna = discounter(
+      cart,
+      ENVIRONMENT_CONSTANTS.PRICE_DISCOUNT_LASAGNA,
+      ENVIRONMENT_CONSTANTS.PRICE_LASAGNA,
+      ENVIRONMENT_CONSTANTS.TAG_LASAGNA,
+    )
+
+    total = totalLasagna + totalSorrentinos
+
+    const openMessage = () => sendMesasge(cart, total, totalWithoutDiscount)
 
     useEffect(() =>{
       window.scrollTo(0, 0);
