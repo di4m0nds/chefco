@@ -36,7 +36,7 @@ function Product({ product }: ProductProps) {
           </Link>
         </div>
         <div className="w-[60%] lg:w-[60%] flex flex-col justify-between">
-          <p className="mt-2 mb-2 font-medium text-subtitle">{name}</p>
+          <p className="mt-2 mb-2 font-medium text-subtitle">{name.length > 30 ? name.substring(0, 29) + "..." : name}</p>
           <p className="font-semibold text-subtitle">${price.toString()} /x{portion.toString()}</p>
         </div>
 

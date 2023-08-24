@@ -41,6 +41,16 @@
       "pic_cover": "cover_s_calabaza_queso_remolacha"
     },
     {
+      "id": 5,
+      "tag": "sorrentinos",
+      "name": "Sorrentinos de Hongos",
+      "description": "Masa rayada de cúrcuma y remolacha, relleno de hongos y queso (hongos, parmesano, cebolla, cebollita de verdeo, vino blanco y crema)",
+      "price": 1050.00,
+      "portion": 7,
+      "pic_preview": "preview_s_hongos",
+      "pic_cover": "cover_s_hongos"
+    },
+    {
       "id": 6,
       "tag": "lasagnas",
       "name": "Lasagna CHEFCO",
