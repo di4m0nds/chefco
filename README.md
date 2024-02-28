@@ -1,6 +1,6 @@
 # CHEFCO PASTAS
 
-Welcome to CHEFCO PASTAS, an online platform for ordering the finest artisanal pasta dishes. Indulge in a unique culinary experience right from the comfort of your home.
+An online platform for ordering the finest artisanal pasta dishes. Indulge in a unique culinary experience right from the comfort of your home.
 
 ## Features
 * Browse through a wide selection of delicious pasta dishes.
